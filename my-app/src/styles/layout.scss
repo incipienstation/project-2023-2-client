@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.children {
+  &-center {
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-start {
+    justify-content: start;
+    align-items: center;
+  }
+
+  &-end {
+    justify-content: end;
+    align-items: center;
+  }
+}
+
+.header {
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
