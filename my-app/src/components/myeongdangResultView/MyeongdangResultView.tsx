@@ -13,6 +13,7 @@ const MyeongdangResultView: React.FC = () => {
   const cellClass = "cell children-center cell--border"
   const indexCellClass = cellClass + " cell--index bold"
   const nameCellClass = cellClass + " cell--name"
+  const predictionCellClass = cellClass + " cell--prediction"
   const luckCellClass = cellClass + " cell--luck"
 
 
@@ -24,8 +25,8 @@ const MyeongdangResultView: React.FC = () => {
     <div className="container row row--grid h-5" key={myeongdang.id}>
       <div className={indexCellClass}>{myeongdangIndexList[index]}</div>
       <div className={nameCellClass}>{myeongdang.name}</div>
-      <div className={cellClass}>{myeongdang.avg_quality}</div>
-      <div className={cellClass}>{myeongdang.avg_quantity}</div>
+      <div className={predictionCellClass}>{myeongdang.avg_quality}</div>
+      <div className={predictionCellClass}>{myeongdang.avg_quantity.toFixed(3)}</div>
       <div className={luckCellClass}>{myeongdang.luck}</div>
     </div>
   ))
@@ -40,8 +41,8 @@ const MyeongdangResultView: React.FC = () => {
           <div className="container row row--grid h-5 bold">
             <div className={indexCellClass}>#</div>
             <div className={nameCellClass}>위치</div>
-            <div className={cellClass}>수질(평균)</div>
-            <div className={cellClass}>수량(평균)</div>
+            <div className={predictionCellClass}>수질(평균)</div>
+            <div className={predictionCellClass}>수량(평균)</div>
             <div className={luckCellClass}>운세</div>
           </div>
           {rowBuilder}
