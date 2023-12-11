@@ -27,7 +27,7 @@ const initialState: PredictionState = {
 export const fetchPredictionList = createAsyncThunk(
   'prediction/fetchPredictionList',
   async (stationId: string) => {
-    const response = await axios.get(`http://localhost:8000/api/stations/${stationId}/predictions/`);
+    const response = await axios.get(`${import.meta.env.VITE_SERVER_ORIGIN}/api/stations/${stationId}/predictions/`);
     return response.data;
   }
 );

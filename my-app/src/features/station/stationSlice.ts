@@ -36,7 +36,7 @@ const initialState: StationState = {
 export const fetchStationList = createAsyncThunk(
   'station/fetchStationList',
   async () => {
-    const response = await axios.get(`http://localhost:8000/api/stations/`);
+    const response = await axios.get(`${import.meta.env.VITE_SERVER_ORIGIN}/api/stations/`);
     console.log(response.data)
     return response.data;
   }
@@ -45,7 +45,7 @@ export const fetchStationList = createAsyncThunk(
 export const fetchMyeongdangList = createAsyncThunk(
   'station/fetchMyeongdangList',
   async (year: number) => {
-    const response = await axios.get(`http://localhost:8000/api/stations/`, {
+    const response = await axios.get(`${import.meta.env.VITE_SERVER_ORIGIN}/api/stations/`, {
       params: {
         year: year
       }
