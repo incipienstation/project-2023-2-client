@@ -7,7 +7,7 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = ({name: name, onClick: handleClick}) => {
-  return (<div className="button" onClick={handleClick}>{name}</div>)
+  return (<div className="button hover--blue" onClick={handleClick}>{name}</div>)
 }
 
 export default Button

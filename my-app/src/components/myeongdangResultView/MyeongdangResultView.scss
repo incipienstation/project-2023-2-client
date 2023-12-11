@@ -1,0 +1,35 @@
+@import "../../styles/palette";
+
+.myeongdang-result {
+  width: 90%;
+  //padding: 10px;
+  //max-width: 750px;
+  &__table {
+    margin: 5px;
+    width: 100%;
+    max-width: 750px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+}
+
+.cell {
+  &--border {
+    box-shadow: 0 0 1px $default-shadow;
+    overflow: scroll;
+  }
+
+  &--index {
+    min-width: 35px;
+    max-width: 50px;
+  }
+
+  &--name {
+    min-width: 190px;
+  }
+
+  &--luck {
+    min-width: 60px;
+    max-width: 70px;
+  }
+}

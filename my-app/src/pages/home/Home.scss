@@ -1,40 +1,31 @@
+@import "../../styles/palette";
+
 .home {
   height: 100vh;
-  box-shadow: 0 0 10px #444;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
   background-color: white;
+  box-shadow: 0 0 10px $default-shadow;
+
+  &__first,
+  &__second {
+    height: 100vh;
+    min-height: 650px;
+    scroll-snap-align: start;
+    flex: none;
+  }
+
+  &__title {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    padding: 5px 0;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 0 0 2px $default-shadow;
+  }
 }
 
-.page__first,
-.page__second {
-  height: 100vh;
-  scroll-snap-align: start;
-  flex: none;
-}
 
-.page__first {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.page__second {
-}
-
-.title {
-  width: 100%;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  margin: 10px;
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.splitter {
-  //width: 100%;
-  //height: 10px;
-  //box-shadow: ;
-}

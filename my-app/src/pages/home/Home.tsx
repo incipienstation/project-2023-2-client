@@ -5,7 +5,7 @@ import {selectPredictionStatus} from "../../features/prediction/predictionSlice.
 import {Status, useAppDispatch, useAppSelector} from "../../features/store.ts";
 import React, {useEffect} from "react";
 import {fetchStationList, selectMyeongdangStatus} from "../../features/station/stationSlice.ts";
-import Appeal from "../../components/appeal/Appeal.tsx";
+import MyeongdangResultView from "../../components/myeongdangResultView/MyeongdangResultView.tsx";
 
 const Home: React.FC = () => {
   const dispatch = useAppDispatch()
@@ -17,18 +17,21 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <div className="container column home">
-      <div className="container column page__first">
-        <div className="title">자유전공학부 풍수지리연구소</div>
-        <div className="splitter"></div>
+    <div className="container col home">
+      <div className="container col children-center home__first">
+        <div className="home__title s-4">자유전공학부 풍수지리연구소</div>
         <div className="container row">
           <Map/>
-          {predictionStatus === 'succeeded' && <StationDetailView/>}
+          {predictionStatus === 'succeeded' && (
+            <div className="container row">
+              <StationDetailView/>
+            </div>
+          )}
         </div>
       </div>
       {myeongdangStatus === 'succeeded' && (
-        <div className="container page__second">
-          <Appeal/>
+        <div className="container col children-center home__second">
+          <MyeongdangResultView/>
         </div>
       )}
     </div>

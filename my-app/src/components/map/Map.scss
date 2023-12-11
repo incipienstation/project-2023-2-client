@@ -1,4 +1,7 @@
+@import "../../styles/palette";
+
 .map {
+  margin: 5px 0 0;
   padding: 0 20px 20px;
   min-width: 500px;
   flex-grow: 1;
@@ -8,4 +11,5 @@
   flex-grow: 1;
   flex-shrink: 1;
   border-radius: 10px;
+  box-shadow: 0 0 3px $default-shadow;
 }

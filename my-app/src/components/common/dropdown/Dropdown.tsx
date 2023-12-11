@@ -8,23 +8,25 @@ const Dropdown: React.FC = () => {
   const selectedYear = useAppSelector(selectDropdownYear);
   const years = Array.from({length: 10}, (_, index) => 2024 + index);
 
-  const handleYearChange = (year: number) => {
+  const handleChangeYear = (year: number) => {
     dispatch(setDropdownYear(year));
   };
 
+  const optionBuilder = years.map((year) => (
+    <option key={year} value={year}>
+      {year}
+    </option>
+  ))
+
   return (
     <div className="container children-start dropdown">
-      <label htmlFor="year">연도 선택</label>
+      <label className="header__title" htmlFor="year">연도 선택</label>
       <select
         id="year"
-        onChange={(e) => handleYearChange(Number(e.target.value))}
+        onChange={(e) => handleChangeYear(Number(e.target.value))}
         value={selectedYear}
       >
-        {years.map((year) => (
-          <option key={year} value={year}>
-            {year}
-          </option>
-        ))}
+        {optionBuilder}
       </select>
     </div>
   );

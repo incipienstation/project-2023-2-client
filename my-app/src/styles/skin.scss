@@ -1,0 +1,32 @@
+@import "palette";
+
+.hover--blue {
+  background-color: #007bff;
+  color: #fff;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+}
+
+.h {
+  &-4 {
+    min-height: 40px;
+    max-height: 40px;
+  }
+
+  &-5 {
+    min-height: 50px;
+    max-height: 50px;
+  }
+}
+
+.s {
+  &-4 {
+    box-shadow: 0 0 4px $default-shadow;
+  }
+}
+
+.bold {
+  font-weight: bold;
+}

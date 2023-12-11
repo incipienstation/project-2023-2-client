@@ -14,6 +14,7 @@ export interface Station {
 export interface Myeongdang extends Station {
   avg_quantity: number;
   avg_quality: number;
+  luck: '대흉' | '흉' | '평' | '길' | '대길';
 }
 
 interface StationState {
@@ -36,6 +37,7 @@ export const fetchStationList = createAsyncThunk(
   'station/fetchStationList',
   async () => {
     const response = await axios.get(`http://localhost:8000/api/stations/`);
+    console.log(response.data)
     return response.data;
   }
 );

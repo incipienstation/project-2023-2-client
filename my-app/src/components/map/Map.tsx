@@ -50,16 +50,20 @@ const Map: React.FC = () => {
   const buildMap = () => {
     const container = document.getElementById('map');
     const options = {
-      center: new window.kakao.maps.LatLng(37.5665, 126.9780), // Seoul, South Korea
-      level: 14, // Zoom level
+      center: new window.kakao.maps.LatLng(35.999380553850724, 127.8777986059045),
+      level: 13, // Zoom level
     };
     const map = new window.kakao.maps.Map(container, options);
 
     const stations: Station[] = myeongdangStatus === 'succeeded' ? myeongdangList : stationList
     // Add station markers
-    stations.forEach((station) => {
+    stations.forEach((station, index) => {
+      const markerImage = myeongdangStatus === 'succeeded'
+        ? new window.kakao.maps.MarkerImage(`/assets/marker_images/marker${index}.jpg`, new window.kakao.maps.Size(25, 33))
+        : null
       const marker = new window.kakao.maps.Marker({
         position: new window.kakao.maps.LatLng(station.latitude, station.longitude),
+        image: markerImage
       });
 
       // Add a click event listener to each marker
@@ -77,7 +81,7 @@ const Map: React.FC = () => {
   }, [stationList, myeongdangList]);
 
   return (
-    <div className="container column map">
+    <div className="container col map s-4">
       <div className="header">
         <Dropdown/>
         <Button name={"명당 찾기"} onClick={() => {
