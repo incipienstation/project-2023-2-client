@@ -36,7 +36,9 @@ const initialState: StationState = {
 export const fetchStationList = createAsyncThunk(
   'station/fetchStationList',
   async () => {
-    const response = await axios.get(`${import.meta.env.VITE_SERVER_ORIGIN}/api/stations/`);
+    const response = await axios.get(`${import.meta.env.VITE_SERVER_ORIGIN}/api/stations/`, {
+      withCredentials: true,
+    });
     console.log(response.data)
     return response.data;
   }
@@ -48,7 +50,8 @@ export const fetchMyeongdangList = createAsyncThunk(
     const response = await axios.get(`${import.meta.env.VITE_SERVER_ORIGIN}/api/stations/`, {
       params: {
         year: year
-      }
+      },
+      withCredentials: true,
     });
     console.log(response.data)
     return response.data;
